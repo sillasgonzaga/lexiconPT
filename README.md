@@ -13,4 +13,4 @@ knitr::opts_chunk$set(echo = TRUE)
 
 The cleaning process can be seen in `R/setup.R`. Note that, in order to clean the SentiLex dataset in a tidy way, some assumptions had to be made (I'm gonna write a blog post about it). On the other hand, both OpLexicon versions were already cleaned.
 
-To know how both lexicons were made, please see the help functions of the datasets to check their references.
+To know how both lexicons were made, please see the help pages of the datasets to check their references.
