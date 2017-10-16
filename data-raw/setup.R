@@ -40,6 +40,9 @@ download.file("https://raw.githubusercontent.com/diasdavid/METI-EADW/master/src/
 ####  01 - Read, clean and save oplexicon 3.0 ####
 op30 <- read.csv("data-raw/oplexicon_v3.0/lexico_v3.0.txt", stringsAsFactors = FALSE, header = FALSE)
 names(op30) <- c("term", "type", "polarity", "polarity_revision")
+# converter encoding
+Encoding(op30$term) <- "ISO-8859-1"
+#op30$term <- iconv(op30$term, "ISO-8859-1", "UTF-8")
 # save data
 oplexicon_v3.0 <- op30
 use_data(oplexicon_v3.0, overwrite = TRUE)
@@ -47,6 +50,8 @@ use_data(oplexicon_v3.0, overwrite = TRUE)
 ####  02 - Read, clean and save oplexicon 2.1 ####
 op21 <- read.table("data-raw/lexico_v2.1txt", sep = ",", stringsAsFactors = FALSE)
 names(op21) <- c("term", "type", "polarity")
+# converter encoding
+Encoding(op21$term) <- "ISO-8859-1"
 # save data
 oplexicon_v2.1 <- op21
 use_data(oplexicon_v2.1, overwrite = TRUE)
@@ -93,6 +98,8 @@ sentilex_lem <- data.frame(
   polarity_target = v2, polarity_classification = v4,
   stringsAsFactors = FALSE
 )
+# converter encoding
+Encoding(sentilex_lem$term) <- "ISO-8859-1"
 
 # finally, save data
 sentiLex_lem_PT02 <- sentilex_lem
