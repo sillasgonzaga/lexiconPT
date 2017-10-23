@@ -16,5 +16,10 @@ A list of all datasets available on lexiconPT filtered by the inputed word.
 Lookup word or term in datasets available on lexiconPT
 }
 \examples{
-# get_word_sentiment("cantar")
+{
+  get_word_sentiment("cantar")
+  \dontshow{
+  get_word_sentiment("facil")
+  }
+ }
 }

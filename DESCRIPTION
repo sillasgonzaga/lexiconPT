@@ -4,9 +4,8 @@ Title: Lexicons for Portuguese Text Analysis
 Version: 0.1.0
 Authors@R: person("Sillas", "Gonzaga", email = "sillas.gonzaga@gmail.com",
     role = c("aut", "cre"))
-Description: Provides easy access for sentiment lexicons for those who want to do Text Analysis in Portuguese texts.
-    As of now, two Portuguese lexicons are available: SentiLex-PT02 and OpLexicon (v2.1 and v3.0).
-    Use four spaces when indenting paragraphs within the Description.
+Description: Provides easy access for sentiment lexicons for those who want to do text analysis in Portuguese texts.
+    As of now, two Portuguese lexicons are available: 'SentiLex-PT02' and 'OpLexicon' (v2.1 and v3.0).
 License: GPL-2 | file LICENSE
 Encoding: UTF-8
 LazyData: true

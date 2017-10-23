@@ -5,8 +5,12 @@
 #' @param word character.
 #'
 #' @return A list of all datasets available on lexiconPT filtered by the inputed word.
-#' @examples
-#' # get_word_sentiment("cantar")
+#' @examples{
+#'   get_word_sentiment("cantar")
+#'   \dontshow{
+#'   get_word_sentiment("facil")
+#'   }
+#'  }
 #' @export
 get_word_sentiment <- function(word){
 
