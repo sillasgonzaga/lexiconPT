@@ -40,3 +40,15 @@ get_word_sentiment <- function(word,
 
 }
 
+#' @export
+get_polarity <- function(word){
+  x <- get_word_sentiment(word, dictionary = "oplexicon_v3")
+
+  if(length(x) == 1){
+    p <- 0
+    return(p)
+  } else{
+    p <- x$polarity
+    return(p)
+  }
+}
