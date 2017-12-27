@@ -10,7 +10,7 @@ output: github_document
 ```{r}
 data("sentiLex_lem_PT02")
 data("oplexicon_v2.1")
-data("oplexicon_v3.0.rda")
+data("oplexicon_v3.0")
 ```
 Also, you can individually check a word sentiment by using the function `lexiconPT::get_word_sentiment()`:
 
