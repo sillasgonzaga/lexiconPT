@@ -4,7 +4,8 @@
 \alias{get_word_sentiment}
 \title{get_word_sentiment}
 \usage{
-get_word_sentiment(word)
+get_word_sentiment(word, dictionary = c("all", "oplexicon_v2", "oplexicon_v3",
+  "sentilex"))
 }
 \arguments{
 \item{word}{character.}

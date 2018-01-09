@@ -12,7 +12,9 @@
 #'   }
 #'  }
 #' @export
-get_word_sentiment <- function(word){
+get_word_sentiment <- function(word,
+                               dictionary = c("all", "oplexicon_v2", "oplexicon_v3",
+                                              "sentilex")){
 
   notAvailable <- function(df) {
     if(nrow(df) == 0) return("Word not present in dataset") else df
@@ -21,11 +23,32 @@ get_word_sentiment <- function(word){
   x2 <- notAvailable(oplexicon_v3.0[oplexicon_v3.0[["term"]] == word, ])
   x3 <- notAvailable(sentiLex_lem_PT02[sentiLex_lem_PT02[["term"]] == word, ])
 
+  dict <- match.arg(dictionary, choices = c("all", "oplexicon_v2", "oplexicon_v3", "sentilex"))
+  if(dict == "all"){
+    return(list(
+      oplexicon_v2.1 = x1,
+      oplexicon_v3.0 = x2,
+      sentilex = x3
+    ))
+  } else if(dict == "oplexicon_v2"){
+    return(x1)
+  } else if(dict == "oplexicon_v3"){
+    return(x2)
+  } else {
+    return(x3)
+  }
 
-  list(
-    oplexicon_v2.1 = x1,
-    oplexicon_v3.0 = x2,
-    sentilex = x3
-  )
 }
 
+#' @export
+get_polarity <- function(word){
+  x <- get_word_sentiment(word, dictionary = "oplexicon_v3")
+
+  if(length(x) == 1){
+    p <- 0
+    return(p)
+  } else{
+    p <- x$polarity
+    return(p)
+  }
+}
